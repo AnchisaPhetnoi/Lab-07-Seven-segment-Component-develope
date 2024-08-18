@@ -20,7 +20,6 @@ public:
         common_pin = pin;
         common = LED(common_pin);
     }
-
     void HardwareTest();
     void DisplayBlank();
     void DisplayNumber(int number);
@@ -34,4 +33,6 @@ public:
     void DisplayNum7();
     void DisplayNum8();
     void DisplayNum9();
+    void Displayoff();
+    void Displayon();
 };
