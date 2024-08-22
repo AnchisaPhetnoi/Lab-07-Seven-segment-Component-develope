@@ -206,6 +206,3 @@ void SevenSegment::DisplayNum9()
     seg_g.ON();
    common.ON();
 }
-
-
-
