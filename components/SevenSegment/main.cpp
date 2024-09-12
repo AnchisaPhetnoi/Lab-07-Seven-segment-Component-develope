@@ -18,11 +18,9 @@ extern "C" void app_main(void)
         s2.DisplayOn();
         vTaskDelay(10 / portTICK_PERIOD_MS);
         s2.DisplayOff();
-
         counter++;
         if (counter > 99)
-        {
             counter = 0;
-        }
+        
     }
 }
