@@ -35,5 +35,5 @@ extern "C" void app_main(void)
 {
     xTaskCreate(vTaskScanSevenSegment, 
       "Seven Seg", 1024, NULL, 
-      tskIDLE_PRIORITY, &xSevenSegmentHandle);
+      10, &xSevenSegmentHandle);
 }
