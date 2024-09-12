@@ -1,26 +1,25 @@
 #include <stdio.h>
 #include "SevenSegment.h"
 
-SevenSegment s1(0);
-SevenSegment s2(4);
+SevenSegment s1(0);  // Seven Segment ตัวแรก
+SevenSegment s2(4);  // Seven Segment ตัวที่สอง
 
 extern "C" void app_main(void)
 {
-    uint8_t counter = 0;
     while (1)
     {
-        s1.DisplayNumber(counter / 10);
+        // แสดงเลข 1 บน Seven Segment ตัวแรก
+        s1.DisplayNumber(1);
         s1.DisplayOn();
-        vTaskDelay(10 / portTICK_PERIOD_MS);
-        s1.DisplayOff();
+        vTaskDelay(500 / portTICK_PERIOD_MS); // หน่วงเวลา 500ms
 
-        s2.DisplayNumber(counter % 10);
+        s1.DisplayOff(); // ปิดการแสดงผลบน Seven Segment ตัวแรก
+
+        // แสดงเลข 5 บน Seven Segment ตัวที่สอง
+        s2.DisplayNumber(5);
         s2.DisplayOn();
-        vTaskDelay(10 / portTICK_PERIOD_MS);
-        s2.DisplayOff();
-        counter++;
-        if (counter > 99)
-            counter = 0;
-        
+        vTaskDelay(500 / portTICK_PERIOD_MS); // หน่วงเวลา 500ms
+
+        s2.DisplayOff(); // ปิดการแสดงผลบน Seven Segment ตัวที่สอง
     }
 }
